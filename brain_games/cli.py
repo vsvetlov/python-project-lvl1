@@ -1,4 +1,4 @@
-"""CLI functions."""
+"""Game's logic."""
 
 import prompt
 
