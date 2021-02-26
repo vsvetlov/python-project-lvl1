@@ -1,4 +1,5 @@
 """Collection of games."""
+import math
 
 import random
 
@@ -17,9 +18,9 @@ def do_attempt_calc():  # noqa: WPS210
     Returns:
         bool, int
     """
-    game_complexity = ((1, 50), (1, 10))
-    number1 = random.randint(game_complexity[0])
-    number2 = random.randint(game_complexity[1])
+    game_complexity = 100
+    number1 = random.randint(1, game_complexity)
+    number2 = random.randint(1, game_complexity)
     sign = random.choice(['+', '-', '*'])
     print('Question: {0} {1} {2}'.format(number1, sign, number2))
     if sign == '+':
@@ -30,7 +31,7 @@ def do_attempt_calc():  # noqa: WPS210
         correct_answer = number1 * number2
     print(correct_answer)
     user_answer = prompt.string('Your answer: ')
-    if user_answer.isdecimal():
+    if user_answer.lstrip('-').isdecimal():
         user_answer = int(user_answer)
     else:
         return False, user_answer
@@ -53,3 +54,26 @@ def do_attempt_even():
     if game_move == ('yes', 0) or game_move == ('no', 1):  # noqa: WPS514
         return True, user_answer
     return False, user_answer
+
+
+def do_attempt_gcd():
+    """
+    Define logic of brain-gcd game.
+
+    Return result of attempt, user's answer
+
+    Returns:
+        bool, int
+    """
+    game_complexity = 500
+    number1 = random.randint(1, game_complexity)
+    number2 = random.randint(1, game_complexity)
+    print('Question: {0} {1}'.format(number1, number2))
+    correct_answer = math.gcd(number1, number2)
+    print(correct_answer)
+    user_answer = prompt.string('Your answer: ')
+    if user_answer.lstrip('-').isdecimal():
+        user_answer = int(user_answer)
+        return user_answer == correct_answer, user_answer
+    else:
+        return False, user_answer
