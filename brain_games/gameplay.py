@@ -24,7 +24,9 @@ def game_even(user_name):
         else:
             print(
                 "'{0}' is wrong answer. Let's try again, {1}!".format(
-                    user_answer, user_name))
+                    user_answer, user_name,
+                ),
+            )
             break
         attempt += 1
     else:
