@@ -13,7 +13,7 @@ def play_game(user_name, do_attempt, game_rules):
 
     Args:
         user_name: user's name
-        do_attempt: name of the function that defines logic of specific game
+        do_attempt: invokes of a function that defines logic of specific game
         game_rules: game's rules
     """
     print(game_rules)
