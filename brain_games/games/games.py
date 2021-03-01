@@ -113,7 +113,7 @@ def create_progression(game_complexity):  # noqa: WPS210
     """
     first_number = random.randrange(game_complexity[0])
     diff = random.randrange(2, game_complexity[1])
-    progression_length = random.randrange(5, game_complexity[2])
+    progression_length = random.randrange(6, game_complexity[2])
     missed_position = random.randrange(1, progression_length + 1)
     current_position = 1
     progression = ''
