@@ -141,7 +141,7 @@ def make_attempt_progression():
     """
     game_complexity = (11, 5, 11)
     progression, correct_answer = create_progression(game_complexity)
-    print('Question: {0}'.format(progression))
+    print('Question:{0}'.format(progression))
     user_answer = prompt.string('Your answer: ')
     return user_answer, str(correct_answer)
 
