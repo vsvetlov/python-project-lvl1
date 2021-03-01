@@ -159,10 +159,10 @@ def is_prime(number):
         str
     """
     divider = 2
-    if 1 < number <= 3:
-        return 'yes'
-    elif number == 1:
+    if number == 1:
         return 'no'
+    elif 1 < number <= 3:
+        return 'yes'
     while divider < number:
         if number % divider > 0:
             divider += 1
