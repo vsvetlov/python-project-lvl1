@@ -19,13 +19,14 @@ def play_game(user_name, do_attempt, game_rules):
     print(game_rules)
     attempt = 1
     while attempt <= MAX_ATTEMPTS:
-        attempt_result, user_answer = do_attempt()
-        if attempt_result:
+        user_answer, correct_answer = do_attempt()
+        if correct_answer == user_answer:
             print('Correct!')
         else:
             print(
-                "'{0}' is wrong answer. Let's try again, {1}!".format(
-                    user_answer, user_name,
+                "'{0}' is wrong answer ;(. Correct answer was '{1}'.\n"
+                "Let's try again, {2}!".format(  # noqa: WPS326
+                    user_answer, correct_answer, user_name,
                 ),
             )
             break

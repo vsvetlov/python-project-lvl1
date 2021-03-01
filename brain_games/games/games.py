@@ -12,7 +12,7 @@ def do_attempt_calc():  # noqa: WPS210
     Return result of attempt, user's answer
 
     Returns:
-        bool, int
+        str
     """
     game_complexity = 100
     number1 = random.randrange(game_complexity)
@@ -27,11 +27,24 @@ def do_attempt_calc():  # noqa: WPS210
         correct_answer = number1 * number2
     print(correct_answer)
     user_answer = prompt.string('Your answer: ')
-    if user_answer.lstrip('-').isdecimal():
-        user_answer = int(user_answer)
-    else:
-        return False, user_answer
-    return user_answer == correct_answer, user_answer
+    return user_answer, str(correct_answer)
+
+
+def is_even(number):
+    """
+    Calculate if provided number is even one.
+
+    Return result in yes/no format
+
+    Args:
+        number: a number to test
+
+    Returns:
+        str
+    """
+    if number % 2 == 0:
+        return 'yes'
+    return 'no'
 
 
 def do_attempt_even():
@@ -41,16 +54,14 @@ def do_attempt_even():
     Return result of attempt, user's answer
 
     Returns:
-        bool, int
+        str
     """
     game_complexity = 1000
     number = random.randrange(game_complexity)
     print('Question: {0}'.format(number))
     user_answer = prompt.string('Your answer: ')
-    game_move = (user_answer, number % 2)
-    if game_move == ('yes', 0) or game_move == ('no', 1):  # noqa: WPS514
-        return True, user_answer
-    return False, user_answer
+    correct_answer = is_even(number)
+    return user_answer, correct_answer
 
 
 def do_attempt_gcd():
@@ -60,19 +71,16 @@ def do_attempt_gcd():
     Return result of attempt, user's answer
 
     Returns:
-        bool, int
+        str
     """
     game_complexity = 500
-    number1 = random.randint(1, game_complexity)
-    number2 = random.randint(1, game_complexity)
+    number1 = random.randrange(1, game_complexity)
+    number2 = random.randrange(1, game_complexity)
     print('Question: {0} {1}'.format(number1, number2))
     correct_answer = math.gcd(number1, number2)
     print(correct_answer)
     user_answer = prompt.string('Your answer: ')
-    if user_answer.lstrip('-').isdecimal():
-        user_answer = int(user_answer)
-        return user_answer == correct_answer, user_answer
-    return False, user_answer
+    return user_answer, str(correct_answer)
 
 
 def do_attempt_progression():  # noqa: WPS210
@@ -82,7 +90,7 @@ def do_attempt_progression():  # noqa: WPS210
     Return result of attempt, user's answer
 
     Returns:
-        bool, int
+        str
     """
     game_complexity = (11, 5, 11)
     first_number = random.randrange(game_complexity[0])
@@ -103,11 +111,7 @@ def do_attempt_progression():  # noqa: WPS210
         current_position += 1
     print('Question: {0}'.format(progression))
     user_answer = prompt.string('Your answer: ')
-    if user_answer.isdecimal():
-        user_answer = int(user_answer)
-    else:
-        return False, user_answer
-    return user_answer == correct_answer, user_answer
+    return user_answer, str(correct_answer)
 
 
 def is_prime(number):
@@ -140,13 +144,11 @@ def do_attempt_prime():
     Return result of attempt, user's answer
 
     Returns:
-        bool, int
+        str
     """
     game_complexity = 101
     number = random.randrange(1, game_complexity)
     print('Question: {0}'.format(number))
     user_answer = prompt.string('Your answer: ')
     correct_answer = is_prime(number)
-    if user_answer == correct_answer:
-        return True, user_answer
-    return False, user_answer
+    return user_answer, str(correct_answer)
