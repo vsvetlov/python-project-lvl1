@@ -161,8 +161,6 @@ def is_prime(number):
     divider = 2
     if number == 1:
         return 'no'
-    elif 1 < number <= 3:
-        return 'yes'
     else:
         while divider < number:
             if number % divider > 0:
