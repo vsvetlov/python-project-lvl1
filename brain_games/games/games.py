@@ -163,11 +163,12 @@ def is_prime(number):
         return 'no'
     elif 1 < number <= 3:
         return 'yes'
-    while divider < number:
-        if number % divider > 0:
-            divider += 1
-        else:
-            return 'no'
+    else:
+        while divider < number:
+            if number % divider > 0:
+                divider += 1
+            else:
+                return 'no'
     return 'yes'
 
 
