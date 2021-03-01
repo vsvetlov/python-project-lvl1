@@ -108,3 +108,45 @@ def do_attempt_progression():  # noqa: WPS210
     else:
         return False, user_answer
     return user_answer == correct_answer, user_answer
+
+
+def is_prime(number):
+    """
+    Calculate if provided number is prime one.
+
+    Return result in yes/no format
+
+    Args:
+        number: a number to test
+
+    Returns:
+        str
+    """
+    divider = 2
+    if number <= 3:
+        return 'yes'
+    while divider < number:
+        if number % divider > 0:
+            divider += 1
+        else:
+            return 'no'
+    return 'yes'
+
+
+def do_attempt_prime():
+    """
+    Define logic of brain-prime game.
+
+    Return result of attempt, user's answer
+
+    Returns:
+        bool, int
+    """
+    game_complexity = 101
+    number = random.randrange(1, game_complexity)
+    print('Question: {0}'.format(number))
+    user_answer = prompt.string('Your answer: ')
+    correct_answer = is_prime(number)
+    if user_answer == correct_answer:
+        return True, user_answer
+    return False, user_answer
