@@ -1,25 +1,22 @@
 """Common gameplay."""
-from brain_games.games.games import (  # noqa: F401
-    make_attempt_calc,
-    make_attempt_even,
-)
-
-MAX_ATTEMPTS = 3
+from brain_games.cli import ask_user, welcome_user
 
 
-def play_game(user_name, make_attempt, game_rules):
+def play_game(game_rules, max_attempts, game_type):
     """
-    Define main flow of a game.
+    Define main flow of a game and interact with an user.
 
     Args:
-        user_name: user's name
-        make_attempt: invokes of a function that defines logic of specific game
+        max_attempts: max number of user's moves
+        game_type: contains a function that defines logic of specific game
         game_rules: game's rules
     """
-    print(game_rules)
+    user_name = welcome_user(game_rules)
     attempt = 1
-    while attempt <= MAX_ATTEMPTS:
-        user_answer, correct_answer = make_attempt()
+    while attempt <= max_attempts:
+        make_attempt = game_type
+        game_question, correct_answer = make_attempt()
+        user_answer = ask_user(game_question)
         if correct_answer == user_answer:
             print('Correct!')
         else:
