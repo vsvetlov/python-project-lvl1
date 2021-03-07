@@ -3,12 +3,9 @@
 import prompt
 
 
-def welcome_user(game_rules):
+def welcome_user():
     """
-    Ask for user's name and provide the rules of a game.
-
-    Args:
-        game_rules: game's rules
+    Ask for user's name.
 
     Return user's name
 
@@ -17,7 +14,7 @@ def welcome_user(game_rules):
     """
     print('Welcome to the Brain Games!')
     user_name = prompt.string('May I have your name? ')
-    print('Hello, {0}\n{1}'.format(user_name, game_rules))
+    print('Hello, {0}'.format(user_name))
     return user_name
 
 

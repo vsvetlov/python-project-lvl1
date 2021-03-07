@@ -11,7 +11,8 @@ def play_game(game_rules, max_attempts, game_type):
         game_type: contains a function that defines logic of specific game
         game_rules: game's rules
     """
-    user_name = welcome_user(game_rules)
+    user_name = welcome_user()
+    print(game_rules)
     attempt = 1
     while attempt <= max_attempts:
         make_attempt = game_type
