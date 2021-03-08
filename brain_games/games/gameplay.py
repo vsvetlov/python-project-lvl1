@@ -13,8 +13,7 @@ def play_game(game_rules, max_attempts, game_type):
     """
     user_name = welcome_user()
     print(game_rules)
-    attempt = 1
-    while attempt <= max_attempts:
+    for _ in range(max_attempts):
         make_attempt = game_type
         game_question, correct_answer = make_attempt()
         user_answer = ask_user(game_question)
@@ -28,6 +27,5 @@ def play_game(game_rules, max_attempts, game_type):
                 ),
             )
             break
-        attempt += 1
     else:
         print('Congratulations, {0}!'.format(user_name))
