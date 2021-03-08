@@ -16,13 +16,13 @@ def is_prime(number):
     """
     Calculate if provided number is prime one.
 
-    Return result in yes/no format
+    Return result of calculation
 
     Args:
         number: a number to test
 
     Returns:
-        str
+        bool
     """
     divider = 2
     if number == 1:
