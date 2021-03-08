@@ -24,14 +24,12 @@ def is_prime(number):
     Returns:
         bool
     """
-    divider = 2
     if number == 1:
         return False
-    while divider < number:
-        if number % divider > 0:
-            divider += 1
-        else:
-            return False
+    for divider in range(2, number // 2 + 1):
+        if number % divider != 0:
+            continue
+        return False
     return True
 
 
