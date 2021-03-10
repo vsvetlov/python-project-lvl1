@@ -1,7 +1,7 @@
 """Brain-calc game."""
 import random
 
-from brain_games.games.gameplay import play_game
+from brain_games.gameplay import play_game
 
 GAME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 MAX_ATTEMPTS = 3

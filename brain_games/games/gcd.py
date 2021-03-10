@@ -2,7 +2,7 @@
 import math
 import random
 
-from brain_games.games.gameplay import play_game
+from brain_games.gameplay import play_game
 
 GAME_RULES = 'Find the greatest common divisor of given numbers'
 MAX_ATTEMPTS = 3
