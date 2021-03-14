@@ -49,9 +49,9 @@ def make_attempt_progression():
     progression, missed_position = create_progression(GAME_COMPLEXITY)
     correct_answer = progression[missed_position]
     progression_for_question = (
-        ' '.join(progression[:missed_position]),
-        ' .. ',
-        ' '.join(progression[missed_position + 1:]),
+        progression[:missed_position]
+        + ('..',)
+        + progression[missed_position + 1:]
     )
-    game_question = 'Question: {0}'.format(progression_for_question.strip())
+    game_question = 'Question: {0}'.format(' '.join(progression_for_question))
     return game_question, str(correct_answer)
