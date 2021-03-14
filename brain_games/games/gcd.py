@@ -1,11 +1,11 @@
 """Brain-calc game."""
-import math
 import random
 
 from brain_games.gameplay import play_game
 
 GAME_RULES = 'Find the greatest common divisor of given numbers'
 MAX_ATTEMPTS = 3
+GAME_COMPLEXITY = 500
 
 
 def start_game():
@@ -41,10 +41,8 @@ def make_attempt_gcd():
     Returns:
         str
     """
-    game_complexity = 500
-    number1 = random.randrange(1, game_complexity)
-    number2 = random.randrange(1, game_complexity)
+    number1 = random.randrange(1, GAME_COMPLEXITY)
+    number2 = random.randrange(1, GAME_COMPLEXITY)
     game_question = 'Question: {0} {1}'.format(number1, number2)
     correct_answer = calc_gcd(number1, number2)
-    print(math.gcd(number1, number2))
     return game_question, str(correct_answer)

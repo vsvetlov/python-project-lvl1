@@ -5,6 +5,7 @@ from brain_games.gameplay import play_game
 
 GAME_RULES = 'What number is missing in the progression?'
 MAX_ATTEMPTS = 3
+GAME_COMPLEXITY = (11, 5, 11)
 
 
 def start_game():
@@ -45,8 +46,7 @@ def make_attempt_progression():
     Returns:
         str
     """
-    game_complexity = (11, 5, 11)
-    progression, missed_position = create_progression(game_complexity)
+    progression, missed_position = create_progression(GAME_COMPLEXITY)
     correct_answer = progression[missed_position]
     game_question = 'Question: {0}{1}{2}'.format(
         ' '.join(progression[:missed_position]),

@@ -5,6 +5,7 @@ from brain_games.gameplay import play_game
 
 GAME_RULES = 'What is the result of the expression?'
 MAX_ATTEMPTS = 3
+GAME_COMPLEXITY = 100
 
 
 def start_game():
@@ -43,11 +44,9 @@ def make_attempt_calc():
     Returns:
         str
     """
-    game_complexity = 100
-    number1 = random.randrange(game_complexity)
-    number2 = random.randrange(game_complexity)
+    number1 = random.randrange(GAME_COMPLEXITY)
+    number2 = random.randrange(GAME_COMPLEXITY)
     sign = random.choice(['+', '-', '*'])
     game_question = 'Question: {0} {1} {2}'.format(number1, sign, number2)
     correct_answer = calc_answer(number1, number2, sign)
-    print(correct_answer)
     return game_question, str(correct_answer)

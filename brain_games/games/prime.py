@@ -5,6 +5,7 @@ from brain_games.gameplay import play_game
 
 GAME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 MAX_ATTEMPTS = 3
+GAME_COMPLEXITY = 101
 
 
 def start_game():
@@ -42,8 +43,7 @@ def make_attempt_prime():
     Returns:
         str
     """
-    game_complexity = 101
-    number = random.randrange(1, game_complexity)
+    number = random.randrange(1, GAME_COMPLEXITY)
     game_question = 'Question: {0}'.format(number)
     correct_answer = 'yes' if is_prime(number) else 'no'
     return game_question, str(correct_answer)
