@@ -53,4 +53,4 @@ def make_attempt_progression():
         ' .. ',
         ' '.join(progression[missed_position + 1:]),
     )
-    return game_question, str(correct_answer)
+    return game_question.strip(), str(correct_answer)
