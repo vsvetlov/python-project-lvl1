@@ -2,7 +2,9 @@
 import random
 
 GAME_RULES = 'What number is missing in the progression?'
-GAME_COMPLEXITY = (11, 5, 11)
+MAX_FIRST_NUMBER = 11
+MAX_DIFF = 5
+MAX_PROGRESSION_LENGHT = 11
 
 
 def create_progression(first_number, diff, progression_length):
@@ -26,7 +28,7 @@ def create_progression(first_number, diff, progression_length):
     return progression
 
 
-def make_attempt():
+def make_attempt():  # noqa:WPS210
     """
     Define logic of brain-progression game.
 
@@ -35,9 +37,9 @@ def make_attempt():
     Returns:
         str
     """
-    first_number = random.randrange(GAME_COMPLEXITY[0])
-    diff = random.randrange(2, GAME_COMPLEXITY[1])
-    progression_length = random.randrange(6, GAME_COMPLEXITY[2])
+    first_number = random.randrange(MAX_FIRST_NUMBER)
+    diff = random.randrange(2, MAX_DIFF)
+    progression_length = random.randrange(6, MAX_PROGRESSION_LENGHT)
     missed_position = random.randrange(progression_length)
     progression = create_progression(first_number, diff, progression_length)
     correct_answer = progression[missed_position]

@@ -2,7 +2,7 @@
 import random
 
 GAME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-GAME_COMPLEXITY = 101
+MAX_RANDOM_NUMBER = 101
 
 
 def is_prime(number):
@@ -34,7 +34,7 @@ def make_attempt():
     Returns:
         str
     """
-    number = random.randrange(1, GAME_COMPLEXITY)
+    number = random.randrange(1, MAX_RANDOM_NUMBER)
     game_question = 'Question: {0}'.format(number)
     correct_answer = 'yes' if is_prime(number) else 'no'
     return game_question, str(correct_answer)

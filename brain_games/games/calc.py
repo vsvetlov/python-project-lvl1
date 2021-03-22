@@ -2,7 +2,7 @@
 import random
 
 GAME_RULES = 'What is the result of the expression?'
-GAME_COMPLEXITY = 100
+MAX_RANDOM_NUMBER = 100
 
 
 def calc_answer(number1, number2, sign):
@@ -40,8 +40,8 @@ def make_attempt():
     Returns:
         str
     """
-    number1 = random.randrange(GAME_COMPLEXITY)
-    number2 = random.randrange(GAME_COMPLEXITY)
+    number1 = random.randrange(MAX_RANDOM_NUMBER)
+    number2 = random.randrange(MAX_RANDOM_NUMBER)
     sign = random.choice(['+', '-', '*'])
     game_question = 'Question: {0} {1} {2}'.format(number1, sign, number2)
     correct_answer = calc_answer(number1, number2, sign)

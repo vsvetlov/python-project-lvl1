@@ -2,7 +2,7 @@
 import random
 
 GAME_RULES = 'Find the greatest common divisor of given numbers'
-GAME_COMPLEXITY = 500
+MAX_RANDOM_NUMBER = 500
 
 
 def calc_gcd(number1, number2):
@@ -35,8 +35,8 @@ def make_attempt():
     Returns:
         str
     """
-    number1 = random.randrange(1, GAME_COMPLEXITY)
-    number2 = random.randrange(1, GAME_COMPLEXITY)
+    number1 = random.randrange(1, MAX_RANDOM_NUMBER)
+    number2 = random.randrange(1, MAX_RANDOM_NUMBER)
     game_question = 'Question: {0} {1}'.format(number1, number2)
     correct_answer = calc_gcd(number1, number2)
     return game_question, str(correct_answer)
