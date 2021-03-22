@@ -1,16 +1,8 @@
 """Brain-calc game."""
 import random
 
-from brain_games.gameplay import play_game
-
 GAME_RULES = 'What number is missing in the progression?'
-MAX_ATTEMPTS = 3
 GAME_COMPLEXITY = (11, 5, 11)
-
-
-def start_game():
-    """Initiate gameplay of specific game."""
-    play_game(GAME_RULES, MAX_ATTEMPTS, make_attempt_progression)
 
 
 def create_progression(game_complexity):
@@ -37,7 +29,7 @@ def create_progression(game_complexity):
     return progression, missed_position
 
 
-def make_attempt_progression():
+def make_attempt():
     """
     Define logic of brain-progression game.
 

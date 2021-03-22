@@ -1,16 +1,8 @@
 """Brain-calc game."""
 import random
 
-from brain_games.gameplay import play_game
-
 GAME_RULES = 'Find the greatest common divisor of given numbers'
-MAX_ATTEMPTS = 3
 GAME_COMPLEXITY = 500
-
-
-def start_game():
-    """Initiate gameplay of specific game."""
-    play_game(GAME_RULES, MAX_ATTEMPTS, make_attempt_gcd)
 
 
 def calc_gcd(number1, number2):
@@ -32,7 +24,7 @@ def calc_gcd(number1, number2):
             return divider
 
 
-def make_attempt_gcd():
+def make_attempt():
     """
     Define logic of brain-gcd game.
 

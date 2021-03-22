@@ -2,20 +2,17 @@
 from brain_games.cli import ask_user, welcome_user
 
 
-def play_game(game_rules, max_attempts, game_type):
+def play_game(game_type):
     """
     Define main flow of a game and interact with an user.
 
     Args:
-        max_attempts: max number of user's moves
         game_type: contains a function that defines logic of specific game
-        game_rules: game's rules
     """
     user_name = welcome_user()
-    print(game_rules)
-    for _ in range(max_attempts):
-        make_attempt = game_type
-        game_question, correct_answer = make_attempt()
+    print(game_type.GAME_RULES)
+    for _ in range(3):
+        game_question, correct_answer = game_type.make_attempt()
         user_answer = ask_user(game_question)
         if correct_answer == user_answer:
             print('Correct!')

@@ -1,6 +1,5 @@
 .idea
 .venv
-brain_games/gameplay.py
 __pycache__
 dist/
 *.pyc

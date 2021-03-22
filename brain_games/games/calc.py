@@ -1,16 +1,8 @@
 """Brain-calc game."""
 import random
 
-from brain_games.gameplay import play_game
-
 GAME_RULES = 'What is the result of the expression?'
-MAX_ATTEMPTS = 3
 GAME_COMPLEXITY = 100
-
-
-def start_game():
-    """Initiate gameplay of specific game."""
-    play_game(GAME_RULES, MAX_ATTEMPTS, make_attempt_calc)
 
 
 def calc_answer(number1, number2, sign):
@@ -35,7 +27,7 @@ def calc_answer(number1, number2, sign):
         return number1 * number2
 
 
-def make_attempt_calc():
+def make_attempt():
     """
     Define logic of brain-calc game.
 

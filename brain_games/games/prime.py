@@ -1,16 +1,8 @@
 """Brain-calc game."""
 import random
 
-from brain_games.gameplay import play_game
-
 GAME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-MAX_ATTEMPTS = 3
 GAME_COMPLEXITY = 101
-
-
-def start_game():
-    """Initiate gameplay of specific game."""
-    play_game(GAME_RULES, MAX_ATTEMPTS, make_attempt_prime)
 
 
 def is_prime(number):
@@ -34,7 +26,7 @@ def is_prime(number):
     return True
 
 
-def make_attempt_prime():
+def make_attempt():
     """
     Define logic of brain-prime game.
 
