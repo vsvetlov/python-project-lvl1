@@ -16,6 +16,9 @@ def calc_answer(number1, number2, sign):
         number2: the 2nd random number
         sign: operator of expression
 
+    Raises:
+        ValueError: wrong sign
+
     Returns:
         int
     """
@@ -25,6 +28,7 @@ def calc_answer(number1, number2, sign):
         return number1 - number2
     elif sign == '*':
         return number1 * number2
+    raise ValueError('Incorrect sign')
 
 
 def make_attempt():

@@ -17,12 +17,11 @@ def is_prime(number):
     Returns:
         bool
     """
-    if number == 1:
+    if number <= 1:
         return False
     for divider in range(2, number // 2 + 1):
-        if number % divider != 0:
-            continue
-        return False
+        if number % divider == 0:
+            return False
     return True
 
 

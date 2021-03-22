@@ -18,10 +18,12 @@ def calc_gcd(number1, number2):
     Returns:
         int
     """
-    min_number = number1 if number1 <= number2 else number2
-    for divider in range(min_number, 0, -1):
-        if number1 % divider == 0 and number2 % divider == 0:
-            return divider
+    while number1 != 0 and number2 != 0:
+        if number1 > number2:
+            number1 %= number2
+        else:
+            number2 %= number1
+    return number1 + number2
 
 
 def make_attempt():
